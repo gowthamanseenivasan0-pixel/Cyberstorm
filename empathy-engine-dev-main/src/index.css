@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Digital Mental Health Design System - Therapeutic & Calming Colors */
+
+@layer base {
+  :root {
+    /* Core therapeutic palette */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 210 10% 99%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 210 10% 99%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Therapeutic primary - calming blue */
+    --primary: 210 73% 54%;
+    --primary-foreground: 210 15% 99%;
+    --primary-light: 210 100% 92%;
+    --primary-glow: 210 100% 85%;
+
+    /* Healing secondary - soft sage green */
+    --secondary: 158 25% 90%;
+    --secondary-foreground: 158 35% 35%;
+    --healing: 158 45% 65%;
+    --healing-foreground: 158 15% 99%;
+
+    /* Supportive muted tones */
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Gentle accent - warm lavender */
+    --accent: 250 35% 88%;
+    --accent-foreground: 250 45% 35%;
+
+    /* Calm warning - soft amber */
+    --warning: 43 86% 82%;
+    --warning-foreground: 43 55% 35%;
+
+    /* Gentle destructive */
+    --destructive: 0 55% 70%;
+    --destructive-foreground: 210 15% 99%;
+
+    /* Therapeutic borders */
+    --border: 210 25% 88%;
+    --input: 210 25% 90%;
+    --ring: 210 73% 54%;
+
+    /* Soft radius for welcoming feel */
+    --radius: 0.75rem;
+
+    /* Gradients for depth and calm */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-healing: linear-gradient(135deg, hsl(var(--healing)), hsl(var(--accent)));
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--primary-light)));
+    
+    /* Shadows for depth without harshness */
+    --shadow-gentle: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 2px 12px -2px hsl(var(--primary) / 0.08);
+    --shadow-floating: 0 8px 30px -8px hsl(var(--primary) / 0.15);
+
+    /* Smooth therapeutic transitions */
+    --transition-calm: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.2s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode therapeutic palette */
+    --background: 215 25% 12%;
+    --foreground: 210 15% 92%;
+
+    --card: 215 20% 15%;
+    --card-foreground: 210 15% 92%;
+
+    --popover: 215 20% 15%;
+    --popover-foreground: 210 15% 92%;
+
+    /* Darker therapeutic primary */
+    --primary: 210 85% 65%;
+    --primary-foreground: 215 20% 15%;
+    --primary-light: 210 65% 25%;
+    --primary-glow: 210 75% 35%;
+
+    /* Dark healing tones */
+    --secondary: 158 15% 25%;
+    --secondary-foreground: 158 25% 85%;
+    --healing: 158 35% 45%;
+    --healing-foreground: 158 15% 95%;
+
+    /* Dark supportive tones */
+    --muted: 215 20% 18%;
+    --muted-foreground: 210 10% 65%;
+
+    /* Dark accent */
+    --accent: 250 25% 25%;
+    --accent-foreground: 250 35% 85%;
+
+    /* Dark warning */
+    --warning: 43 65% 45%;
+    --warning-foreground: 43 15% 95%;
+
+    /* Dark destructive */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 210 15% 95%;
+
+    /* Dark borders */
+    --border: 215 20% 22%;
+    --input: 215 20% 20%;
+    --ring: 210 85% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Therapeutic utility classes */
+  .therapeutic-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .healing-gradient {
+    background: var(--gradient-healing);
+  }
+  
+  .bg-gradient-background {
+    background: var(--gradient-background);
+  }
+  
+  .shadow-gentle {
+    box-shadow: var(--shadow-gentle);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+  
+  .transition-calm {
+    transition: var(--transition-calm);
+  }
+  
+  .transition-gentle {
+    transition: var(--transition-gentle);
+  }
+  
+  /* Mental health specific animations */
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  
+  @keyframes calm-slide-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-calm-slide-in {
+    animation: calm-slide-in 0.5s ease-out;
+  }
+}
